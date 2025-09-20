@@ -1,0 +1,116 @@
+/* Custom styles for The Brinton Firm */
+
+:root {
+  --primary: #282d3a;
+  --accent: #fcbe51;
+  --gray-dark: #333333;
+  --gray-light: #f8fafc;
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+}
+
+.btn-accent {
+  @apply bg-accent text-white font-semibold py-3 px-6 rounded-lg hover:bg-accent/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+}
+
+.btn-outline {
+  @apply border-2 border-primary text-primary font-semibold py-3 px-6 rounded-lg hover:bg-primary hover:text-white transition-all duration-300 transform hover:scale-105;
+}
+
+.btn-outline-white {
+  @apply border-2 border-white text-white font-semibold py-3 px-6 rounded-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105;
+}
+
+/* Custom scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+.focus\:outline-none:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Animation classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em;
+}
+
+/* Mobile improvements */
+@media (max-width: 640px) {
+  .btn-primary,
+  .btn-accent,
+  .btn-outline,
+  .btn-outline-white {
+    @apply text-base py-4 px-6;
+  }
+}
+
+/* Enhanced hover effects */
+.group:hover .group-hover\:translate-x-1 {
+  transform: translateX(0.25rem);
+}
+
+/* Form improvements */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  @apply transition-all duration-300;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+  @apply ring-2 ring-accent ring-opacity-50 border-accent;
+}
+
+/* Custom gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, #1e2530 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, var(--accent) 0%, #e6a547 100%);
+}
